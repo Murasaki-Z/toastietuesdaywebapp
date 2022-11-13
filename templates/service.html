@@ -1,0 +1,115 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <style>
+    body {background-color: powderblue;}
+    h1   {color: blue;}
+    h2   {margin-top: 1em;
+          margin-bottom: 1em;}
+    input[type=checkbox] {
+    transform: scale(1.5);
+}
+   input[type=radio] {
+    transform: scale(1.5);}
+    h5 {display: inline;}
+
+/* Might want to wrap a span around your checkbox text */
+.checkboxtext
+{
+  /* Checkbox text */
+  font-size: 110%;
+  display: inline;
+}
+    input[type="submit"] {
+    background-color: #bbb;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+input[type="text"] {
+
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+::placeholder{
+      text-align: center; 
+}
+
+
+
+    </style>
+    <form action="" method="post" novalidata>
+    <div class="jumbotron"> 
+
+        <center><h5>
+            Hi! Choose from Options below, Customise, Enter your name and Submit <br>
+        </center></h5>
+
+        <center><h2> Options</h2></center>
+
+        <!-- <center><label for="name"><h5>Name:&nbsp;&nbsp;&nbsp;&nbsp;</h5></label> -->
+
+        <input type="submit" value="Chicken" name ="choice">
+        <input type="submit" value="Cheeze" name ="choice">
+        <input type="submit" value="Veggie" name ="choice">
+        <input type="submit" value="Random" name ="choice"></center>
+
+    </div>
+
+    <div class="jumbotron">
+    <center><h2> Customizations</h2></center>
+    
+
+        <h3> Cheese </h3>
+        {{ cheese.hidden_tag() }}
+        <p>
+            {{ cheese.service }}<br>
+        <h3> Bread </h3>
+        <p> 
+            {{ bread.breads }}
+            
+        </p>
+        <h3> Fillings </h3>
+            {{ fillings.fillings }}<br>
+        <!-- <label for="special">Special Notes</label> -->
+            
+        </p>
+        <span><label for="salt"><h5>Salt</h5>    
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label></span>
+
+            <label><input type="radio" id="salt" name="salt" 
+                value = 'Yes'>&nbsp;&nbsp;Yes&nbsp;&nbsp;</label>
+
+            <label><input type="radio" id="salt"    name="salt" 
+                value = 'No' checked="checked">&nbsp;&nbsp;No&nbsp;&nbsp;</label><br>
+
+        <label for="pepper"><h5>Pepper &nbsp;</h5></label>
+
+            <label><input type="radio" id="pepper" name="pepper" 
+                value = 'Yes'>&nbsp;&nbsp;Yes&nbsp;&nbsp;</label>
+
+            <label><input type="radio" id="pepper" name="pepper" 
+                value = 'No' checked="checked">&nbsp;&nbsp;No&nbsp;&nbsp;</label><br><br>
+
+        <!-- <input type="text" id="special" name="special" placeholder="Special Notes"
+            size = 100em><br><br>
+         <hr> -->   
+
+        <input type="text" id="name" name="name" placeholder="Enter Customer Name"
+            size = 50em required="required" type="text"><br><br>
+
+        <input type="submit" value="Submit" name ="order">
+
+
+        <!-- <H3> Inventory </H3> -->
+
+    </form>
+    <br>
+    
+</div>
+<!-- <div class="jumbotron"> -->
+    <!-- </div> -->
+{% endblock %}
